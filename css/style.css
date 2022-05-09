@@ -135,28 +135,28 @@ body {
 }
 
 .navbar .navbar-nav .nav-link:hover {
-color: #FFCA01;
+	color: #FFCA01;
 }
 
 .navbar .navbar-nav .nav-item {
-position: relative;
+	position: relative;
 }
 
 .navbar .navbar-nav .nav-item::after {
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-margin: auto;
-background-color: #FFCA01;
-width: 0%;
-content: "";
-height: 4px;
-transition: all 0.5s;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #FFCA01;
+	width: 0%;
+	content: "";
+	height: 4px;
+	transition: all 0.5s;
 }
 
 .navbar .navbar-nav .nav-item:hover::after {
-width: 100%;
+	width: 100%;
 }
 
 .navbar-nav .dropdown-menu {
@@ -554,6 +554,53 @@ width: 100%;
 	font-weight: 700;
 }
 
+.navbar-custom{
+    padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #ED0059;
+}
+
+.navbar-custom .navbar-brand {
+	color: rgba(237, 0, 89, 0.9);
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+	color: rgba(237, 0, 89, 0.9);
+}
+.navbar-custom .navbar-nav .nav-link {
+	color: rgba(255, 255, 255);
+}
+.navbar-custom .navbar-nav .nav-link:hover,
+.navbar-custom .navbar-nav .nav-link:focus {
+	color: rgba(255, 202, 1, 0.9);
+}
+.navbar-custom .navbar-nav .nav-link.disabled {
+	color: rgba(237, 0, 89, 0.3);
+}
+.navbar-custom .navbar-nav .show > .nav-link,
+.navbar-custom .navbar-nav .nav-link.active {
+	color: rgba(255, 202, 1, 0.9);
+}
+
+.navbar-custom .navbar-text {
+	color: rgba(255, 255, 255, 1);
+}
+.navbar-custom .navbar-text a,
+.navbar-custom .navbar-text a:hover,
+.navbar-custom .navbar-text a:focus {
+	color: rgba(255, 202, 1, 0.9);
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
 .navbar-custom .navbar-toggler {
 	color: rgba(255, 255, 255);
 	border-color: #ED0059;
@@ -561,6 +608,55 @@ width: 100%;
 
 .navbar-custom .navbar-toggler-icon {
 	background-image: url("/assets/img/toggler-icon.png");
+}
+
+.collapse:not(.show) {
+	display: none;
+}
+
+.collapsing {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+	.collapsing {
+		transition: none;
+	}
+}
+.collapsing.collapse-horizontal {
+	width: 0;
+	height: auto;
+	transition: width 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+	.collapsing.collapse-horizontal {
+		transition: none;
+	}
+}
+
+.dropup,
+.dropend,
+.dropdown,
+.dropstart {
+	position: relative;
+}
+
+.dropdown-toggle {
+	white-space: nowrap;
+}
+.dropdown-toggle::after {
+	display: inline-block;
+	margin-left: 0.255em;
+	vertical-align: 0.255em;
+	content: "";
+	border-top: 0.3em solid;
+	border-right: 0.3em solid transparent;
+	border-bottom: 0;
+	border-left: 0.3em solid transparent;
+}
+.dropdown-toggle:empty::after {
+	margin-left: 0;
 }
 
 .fixed-top {
@@ -579,24 +675,7 @@ header.container-fluid{
 	background-color: #ED0059;
 }
 
-.swiper{
-	width: 950px;
-}
-
-.card{
-	position: relative;
-	background: #fff;
-	border-radius: 20px;
-	margin: 20px;
-}
-
-.card::before{
-	content: "";
-	position: absolute;
-	border: 3px solid ##ED0059;
-}
-
-section.card .card-content{
+section.cardCarousel .card-content{
 	display: flex;
 	position: relative;
 	height: 100%;
@@ -608,7 +687,14 @@ section.card .card-content{
 	z-index: 100;
 }
 
-.card .card-content .card-body{
+.cardCarousel{
+	position: relative;
+	background: #fff;
+	border-radius: 20px;
+	margin: 20px;
+}
+
+.cardCarousel .card-content .card-body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -624,16 +710,22 @@ section.card .card-content{
 .card-body .card-text{
 	font-size: 18px;
 	font-weight: 500;
+	color: #ED0059;
 }
 
-.card .card-btn{
+.card-body .card-title{
+	color: #ED0059;
+	font-weight: 700;
+}
+
+.cardCarousel .card-btn{
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	margin: 10px;
 }
 
-.card .card-btn button{
+.cardCarousel .card-btn button{
 	background: #ED0059;
 	outline: none;
 	border: none;
@@ -649,40 +741,12 @@ section.card .card-content{
 	background: #fa2a78;
 }
 
-
-/*section.container{
-	display: flex;
-}
-
-.boxAPI{
-	display: flex;
-	width: 789px;
-	height: 240px;
-	background: #ffffff;
-	color: #ED0059;
+/*Card Section d*/
+.card{
 	border-radius: 20px;
+	margin: 20px;
 }
 
-section.container-fluid .carousel-inner{
-	width: 789px;
-	height: 240px;
-	background: #ED0059;
-	border-radius: 20px;
+footer.copyright{
+	align-items: center;
 }
-
-section.container-fluid .carousel-item{
-	width: 789px;
-	height: 240px;
-	background: #ffffff;
-	color: #ED0059;
-	border-radius: 20px;
-}
-
-section.container-fluid .carousel-inner .carousel-item .textoCarousel{
-	position: absolute;
-	width: 393px;
-	height: 128px;
-	text-align: justify;
-	text-transform: capitalize;
-}*/
-
